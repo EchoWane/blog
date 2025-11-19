@@ -10,7 +10,7 @@ const ENLocale: I18nStrings = {
   ...baseStrings,
   "hero.title": "Welcome!",
   "hero.body":
-    "We are a bunch of computer science students and graduates/developers from Iran, writing about our experiences.",
+    "We are a bunch of computer science students and graduates/developers, writing about our experiences and findings.",
   "hero.beforeReadme": "If you liked the content or found it useful:",
   "hero.buyCoffee": "Buy us a coffee :)",
   "hero.afterReadme":
