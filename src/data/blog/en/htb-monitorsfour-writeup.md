@@ -23,7 +23,7 @@ This seemingly simple machine taught many important concepts: fuzzing and enumer
 
 Fun fact: both CVEs used in this CTF were from 2025 :))
 
-## Connecting to HackTheBox Machines
+### Connecting to HackTheBox Machines
 
 For those who haven't participated in HackTheBox yet or just started... there are two ways to connect to machines. You can either use a graphical connection to an Attack Machine (which is essentially a pre-configured ParrotOS) or direct connection to the target machine's network via OpenVPN.
 
@@ -74,7 +74,7 @@ DB_USER=monitorsdbuser
 DB_PASS=f*********
 ```
 
-### PHP Type Juggling
+#### PHP Type Juggling
 
 Requesting `/users` returned `missing token`. Adding a value for `?token` gave `invalid or missing token`. Since we know the environment uses PHP 8.3.27, we can exploit Type Juggling. In PHP, comparison with `==` leads to type conversion during comparison, unlike `===`.
 ```bash
@@ -83,12 +83,12 @@ ffuf -c -u http://monitorsfour.htb/user?token=FUZZ -w php_loose_comparison.txt -
 
 With another fuzzing round, we try to find a suitable value for Type Juggling. The value 0 works, and tokens likely start with 0e which, when converted to integer, is treated as scientific notation, making 0 == 0.0 ultimately true.
 ```bash
-curl http://monitorsfour.htb/api/v1/users?token=0
+curl http://monitorsfour.htb/users?token=0
 ```
 
 This returned all users with their password hashes :))
 
-### hashcat
+#### hashcat
 The admin user is more interesting. Examining the password hash, we identify it as MD5 and attempt to crack it with hashcat and the rockyou wordlist:
 ```bash
 hashcat -m 0 56b32eb43e6f15395f6c46c1c9e1cd36 /usr/share/wordlists/rockyou.txt
@@ -100,7 +100,7 @@ Also worth mentioning, in the user details we obtained, alongside the username, 
 
 I logged into the admin panel with these credentials. There was a very important detail in the panel. In their changelog, they mentioned using Docker 4.44.2. This Docker version has a CVE: [CVE-2025-9074](https://nvd.nist.gov/vuln/detail/CVE-2025-9074)
 
-### Vhost Fuzzing
+#### vhost Fuzzing
 
 With further investigation, I realized other puzzle pieces were elsewhere and our work here was almost done. Another fuzzing round on vhosts yielded interesting results:
 ```bash
@@ -115,7 +115,7 @@ Now we know there's a Cacti instance served on `cacti.monitorsfour.htb` and we o
 
 I tried logging in with admin and the password wonderful1, which didn't work. But we can guess the username from previous information - it belongs to Marcus Higgins, so we try combinations. marcus:wonderful1 worked and we logged into Cacti.
 
-## RCE - Cacti 1.2.28 CVE
+## RCE - Cacti 1.2.28
 
 This Cacti version has a new CVE: [CVE-2025-24367](https://nvd.nist.gov/vuln/detail/CVE-2025-24367)
 
@@ -135,7 +135,7 @@ Now we got a reverse shell. Checking the hostname reveals we're inside a Docker 
 
 At this point, navigating to /home allows us to read user.txt and obtain the user flag. Halfway done.
 
-## Privilege Escalation - Root flag
+## Privilege Escalation
 
 As mentioned earlier, CVE-2025-9074 (Docker API Escape) allows us to communicate with Docker's internal interface and create a new container with the Windows C:/ drive mounted in volumes.
 
@@ -157,6 +157,8 @@ Start the container (use the NEW container ID from response, not 821fbd6a43fa):
 ```bash
 curl -X POST http://192.168.65.7:2375/containers/NEW_CONTAINER_ID/start
 ```
+
+### Root flag
 
 Get an Exec ID:
 ```bash

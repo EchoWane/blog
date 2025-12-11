@@ -3,7 +3,7 @@ import type { I18nStrings } from "@/i18n/types";
 const baseStrings = {
   "site.title": "CSBLOG",
   "site.desc":
-    "We are a community of developers and students, blogging about our experiences! Come and join us!",
+    "اینجا درباره تجربه هام تو مسیر توسعه نرم افزار و امنیت سایبری می نویسم",
 };
 
 const FALocale: I18nStrings = {
