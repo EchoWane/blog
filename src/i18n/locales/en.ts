@@ -23,6 +23,7 @@ const ENLocale: I18nStrings = {
   authors: "Authors",
   socialLinks: "Social Links",
   home: "Home",
+  "posts.minRead": "min read",
   posts: "Posts",
   postsBy: "Posts written by ",
   "posts.desc": "All written articles",

@@ -6,7 +6,6 @@ export type LocaleProfile = {
   messages: I18nStrings;
   langTag: string;
   direction: "rtl" | "ltr" | "auto";
-  googleFontName: string;
   default?: boolean;
 };
 export type LocaleKey = keyof typeof localeToProfile;
@@ -17,14 +16,12 @@ export const localeToProfile = {
     messages: FALocale, // Locale translations
     langTag: "fa-IR", // Extremly important used in localizing dates, numbers and sitemap,  only English alphabet and hyphen allowed
     direction: "rtl", // UI layout direction
-    googleFontName: "Vazirmatn", // For OG image generation, font must support 400 and 700 weights, write name as it should goes in a URL, words separated with '+' instead of spaces
   },
   en: {
     name: "English",
     messages: ENLocale,
     langTag: "en-US",
     direction: "ltr",
-    googleFontName: "IBM+Plex+Mono",
     default: true,
   },
 } satisfies Record<string, LocaleProfile>;

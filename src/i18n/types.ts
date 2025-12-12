@@ -17,6 +17,7 @@ export interface I18nStrings {
   home: string;
   posts: string;
   "posts.desc": string;
+  "posts.minRead": string,
   tag: string;
   "tag.desc": string;
   tags: string;

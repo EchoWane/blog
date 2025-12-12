@@ -29,7 +29,7 @@ const t = translateFor(Astro.currentLocale);
 
 const { post, posts } = Astro.props;
 const body = post.body;
-const readTime = calculateReadTime(body);
+const readTime = calculateReadTime(body ?? "");
 
 const {
   title,
@@ -53,14 +53,6 @@ if (typeof initOgImage === "string") {
   ogImageUrl = initOgImage; // Remote OG image (absolute URL)
 } else if (initOgImage?.src) {
   ogImageUrl = initOgImage.src; // Local asset
-}
-
-// Use dynamic OG image if enabled and no remote|local ogImage
-if (!ogImageUrl && SITE.dynamicOgImage) {
-  ogImageUrl = getRelativeLocalePath(
-    Astro.currentLocale,
-    `${getPath(post.id, post.filePath)}/index.png`
-  );
 }
 
 // Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
@@ -114,12 +106,14 @@ const nextPost =
     </h1>
     <div class="flex items-center gap-4">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" class="my-2" />
-      <span>{readTime} min read</span>
       <!--author name also goes here-->
     </div>
+    <span class="text-sm text-skin-base opacity-80">{readTime} {t("posts.minRead")}</span>
+    <hr class="my-6 border-dashed" />
+    
     <article id="article" class="mx-auto prose mt-8 max-w-3xl">
       <Content />
-    </article>
+    </article>  
 
     <hr class="my-8 border-dashed" />
 
