@@ -32,7 +32,7 @@ const {
   author = SITE.author,
   // profile = SITE.profile,
   description = t("site.desc"),
-  ogImage = SITE.ogImage ? `${import.meta.env.BASE_URL}${SITE.ogImage}` : `${import.meta.env.BASE_URL}og.png`,
+  ogImage = SITE.ogImage ? `${import.meta.env.BASE_URL}/${SITE.ogImage}` : `${import.meta.env.BASE_URL}/og.png`,
   canonicalURL = new URL(Astro.url.pathname, Astro.url),
   pubDatetime,
   modDatetime,
@@ -134,7 +134,7 @@ const structuredData = {
     />
 
     <!-- Google Font -->
-    {
+    <!-- {
       Astro.currentLocale === "ar" && (
         <>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -148,22 +148,10 @@ const structuredData = {
           />
         </>
       )
-    }
+    } -->
 
     <meta name="theme-color" content="" />
-
-    {
-      // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-      // include google-site-verification tag in the heading
-      // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-      googleSiteVerification && (
-        <meta
-          name="google-site-verification"
-          content={googleSiteVerification}
-        />
-      )
-    }
-
+    
     <ClientRouter />
     
     <style is:inline set:html={`
