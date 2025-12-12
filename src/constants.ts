@@ -24,7 +24,7 @@ export const SOCIALS = [
   // },
   {
     name: "Telegram",
-    href: "https://t.me/EchoWane",
+    href: "https://t.me/csblog_newsletter",
     linkTitle: (t: Translator) => t("socials.telegram"),
     icon: IconTelegram,
   },

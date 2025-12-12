@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://echowane.github.io/CSBLOG", // replace this with your deployed domain
+  website: "https://echowane.github.io/CSBLOG",
   author: "Amir Rabiee",
   ogImage: "og.png",
   lightAndDarkMode: true,
@@ -9,6 +9,6 @@ export const SITE = {
   showArchives: true,
   showBackButton: true, // show back button in post detail
   dynamicOgImage: false,
-  lang: "fa", // html lang code. Set this empty and default will be "en"
+  lang: "fa", 
   timezone: "UTC", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 } as const;

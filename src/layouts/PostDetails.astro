@@ -9,6 +9,7 @@ import Author from "@/components/Author.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
 import BackButton from "@/components/BackButton.astro";
 import { getPath } from "@/utils/getPath";
+import { calculateReadTime } from '@/utils/readTime';
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
@@ -27,6 +28,8 @@ export interface Props {
 const t = translateFor(Astro.currentLocale);
 
 const { post, posts } = Astro.props;
+const body = post.body;
+const readTime = calculateReadTime(body);
 
 const {
   title,
@@ -111,6 +114,7 @@ const nextPost =
     </h1>
     <div class="flex items-center gap-4">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" class="my-2" />
+      <span>{readTime} min read</span>
       <!--author name also goes here-->
     </div>
     <article id="article" class="mx-auto prose mt-8 max-w-3xl">

@@ -3,7 +3,7 @@ author: "amir_rabiee"
 pubDatetime: 2025-11-16T22:58:45.51
 title: "نگاهی بر حمله Padding Oracle"
 featured: false
-draft: false
+draft: true
 archived: false
 tags:
   - cbc
