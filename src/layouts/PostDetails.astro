@@ -193,7 +193,7 @@ const nextPost =
         // Get current theme
         const theme = localStorage.getItem("theme") ||
           (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        const giscusTheme = theme === "dark" ? "catppuccin_mocha" : "catppuccin_latte";
+        const giscusTheme = theme === "dark" ? "noborder_dark" : "noborder_light";
 
         // Get locale from container data attribute
         const locale = container.dataset?.locale || "en";
@@ -223,7 +223,7 @@ const nextPost =
       function updateGiscusTheme() {
         const theme = localStorage.getItem("theme") ||
           (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        const giscusTheme = theme === "dark" ? "catppuccin_mocha" : "catppuccin_latte";
+        const giscusTheme = theme === "dark" ? "noborder_dark" : "noborder_light";
 
         const iframe = document.querySelector("iframe.giscus-frame");
         if (iframe) {

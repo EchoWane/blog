@@ -1,7 +1,7 @@
 import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
-  "site.title": "Blog",
+  "site.title": "EchoWane's Blog",
   "site.desc":
     "I write about my journey in cybersecurity and software development",
 };
@@ -56,7 +56,7 @@ const ENLocale: I18nStrings = {
   toggleLightAndDark: "Toggle between light and dark mode",
   "pagination.prev": "Previous",
   "pagination.next": "Next",
-  "footer.text": "Built with 💜",
+  "footer.text": "Built with <3",
   "date.published": "Published on",
   "date.updated": "Updated on",
   "date.month.1": "January",

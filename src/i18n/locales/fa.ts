@@ -1,7 +1,7 @@
 import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
-  "site.title": "وبلاگ",
+  "site.title": "وبلاگ من",
   "site.desc":
     "اینجا درباره تجربه هام تو مسیر توسعه نرم افزار و امنیت سایبری می نویسم",
 };
@@ -55,7 +55,7 @@ const FALocale: I18nStrings = {
   toggleLightAndDark: "تغییر بین حالت روشن و تاریک",
   "pagination.prev": "قبلی",
   "pagination.next": "بعدی",
-  "footer.text": "ساخته شده با 💜",
+  "footer.text": "ساخته شده با 3>",
   "date.published": "منتشرشده در",
   "date.updated": "به‌روزرسانی‌ شده در",
   "date.month.1": "January",

@@ -1,6 +1,6 @@
 ---
-name: "امیر"
-latinName: "Amir"
+name: "امیر - EchoWane"
+latinName: "Amir (EchoWane)"
 bio: "دانشجوی ارشد امنیت - صنعتی اصفهان"
 latinBio: "Cybersecurity Master's student at IUT"
 avatar: "default.png"

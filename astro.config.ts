@@ -45,7 +45,7 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
-      themes: { light: "min-light", dark: "catppuccin-mocha" },
+      themes: { light: "min-light", dark: "github-dark-high-contrast" },
       wrap: true,
     },
   },

@@ -25,8 +25,6 @@ remote eu-west-1-vpn.vm.tryhackme.com 1194
 resolv-retry infinite
 nobind
 persist-key
-.
-.
 ...
 ```
 
