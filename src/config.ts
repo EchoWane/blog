@@ -1,6 +1,6 @@
 export const SITE = {
-  website: "https://echowane.github.io/CSBLOG",
-  author: "Amir Rabiee",
+  website: "https://echowane.github.io/blog",
+  author: "EchoWane",
   ogImage: "og.png",
   lightAndDarkMode: true,
   postPerIndex: 5,

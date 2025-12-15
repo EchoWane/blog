@@ -24,13 +24,13 @@ export const SOCIALS = [
   // },
   {
     name: "Telegram",
-    href: "https://t.me/csblog_newsletter",
+    href: "https://t.me/blog_newsletter",
     linkTitle: (t: Translator) => t("socials.telegram"),
     icon: IconTelegram,
   },
   {
     name: "Github",
-    href: "https://github.com/echowane/CSBLOG",
+    href: "https://github.com/echowane/blog",
     linkTitle: (t: Translator) => t("socials.github"),
     icon: IconGithub,
   },

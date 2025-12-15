@@ -16,7 +16,7 @@ import rehypeKatex from "rehype-katex";
 // https://astro.build/config
 export default defineConfig({
   site: "https://echowane.github.io",
-  base: "/CSBLOG",
+  base: "/blog",
   output: "static",
   i18n: {
     locales: SUPPORTED_LOCALES,

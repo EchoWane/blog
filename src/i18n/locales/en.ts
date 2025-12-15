@@ -1,7 +1,7 @@
 import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
-  "site.title": "CSBLOG",
+  "site.title": "blog",
   "site.desc":
     "I write about my journey in cybersecurity and software development",
 };

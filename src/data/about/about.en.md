@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-## What is CSBLOG?
+## What is this?
 
 A collaborative blog.
 
