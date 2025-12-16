@@ -2,6 +2,8 @@
 title: "About"
 ---
 
+I write about whatever I learn and find interesting.
+
 ## Contributing
 
 Interested in co-authoring an article?

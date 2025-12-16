@@ -1,9 +1,9 @@
 import type { I18nStrings } from "@/i18n/types";
 
 const baseStrings = {
-  "site.title": "وبلاگ من",
+  "site.title": "وبلاگ",
   "site.desc":
-    "یه وبلاگ. عموما راجب امنیت سایبری و گزارش CTF",
+    "از تجربیات و یافته هام می نویسم",
 };
 
 const FALocale: I18nStrings = {
